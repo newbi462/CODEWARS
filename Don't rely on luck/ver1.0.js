@@ -1,4 +1,4 @@
-var guess = 42;// if going to hack it might as well make it the awnser to everything
+var guess = 42;// if going to hack it might as well make it the answer to everything
 
 var Math = {
 	random: function(){
