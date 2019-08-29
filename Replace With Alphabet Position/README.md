@@ -49,7 +49,7 @@ The first problem of simple +1 math is easy enough to do after the fact with a .
 ```
 const plus1 = arrayfornumb.map(x => x + 1);
 ```
-Then it is just a matter of return in the answer in the required string.
+Then it is just a matter of return the answer as the required string.
 ```
 return (plus1.join(' '));
 ```
