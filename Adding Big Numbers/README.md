@@ -39,7 +39,7 @@ Well let us add two numbers using pseudo code logic: ```add("11", "99");```
 * STEP 4: 1 ten carried + 9 tens + 1 tens = 11 tens
 * STEP 5: 10 tens === 1 hundred
 * STEP 6: 11 tens - 1 hundred = 1 tens to the answer; add 1 hundred to the hundreds (aka carry the one)
-* STEP 7: answer = 1 hundred + 1 tens + 0 ones === 110
+* STEP 7: answer = 1 hundred + 1 tens + 0 ones === 110.
 I will admit that I did combine some steps the 2nd time we carried the one, but hay I am not a computer. So let us code the fast idiot to do these steps quickly for us no matter how many place values there are.
 
 The solution to this problem is to teach the function to do the steps of carry the one addition so it can do every ```a+b``` to give us the full answer, even for long large numbers.
