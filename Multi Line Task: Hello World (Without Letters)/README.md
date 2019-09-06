@@ -22,4 +22,4 @@ https://www.codewars.com/kata/59a421985eb5d4bb41000031
 
 ## Solution:
 
-IN PROGRESS: Doing the ones this is based on first.
+IN PROGRESS: Doing the ones this is based on first. 
