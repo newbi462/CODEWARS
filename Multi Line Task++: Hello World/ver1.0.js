@@ -6,7 +6,14 @@ f=
 // f === string "Hello, world!"
 //break apart string in to 2 charater or less segments
 ""
-/*"\
+//?? is there a .proto funtion that will type this to funtion with our changing the value?
+//.trim();// leaves typeof === string
+['trim'] // forces typeof === funtion, but f(); wont run String.prototype.trim called on null or undefined
+//?? is there a .proto that will force this operation to a new funtion it will run?
+// The bind() method creates a new function, function.bind(thisArg, so will "typeof funtion" let this new funtion run?
+//.bind("Hello, world!") // perserves typeof === funtion under the new funtion and forces the ['trim'] funtion to run.
+['bind'] // change sytnatx to make \ compatible
+`\
 H\
 e\
 l\
@@ -19,14 +26,7 @@ o\
 r\
 l\
 d\
-!"*/  // [output] is "Hello, world!", but arrow funtion call makes this over 2 charaters
-//?? is there a .proto funtion that will type this to funtion with our changing the value?
-//.trim();// leaves typeof === string
-['trim'] // forces typeof === funtion, but f(); wont run String.prototype.trim called on null or undefined
-//?? is there a .proto that will force this operation to a new funtion it will run?
-// The bind() method creates a new function, function.bind(thisArg, so will "typeof funtion" let this new funtion run?
-//.bind("Hello, world!") // perserves typeof === funtion under the new funtion and forces the ['trim'] funtion to run.
-['bind']`Hello, world!` // change sytnatx to make \ compatible
+!`
 
 //re asemple string
 /*no need for this as it is as needed*/
