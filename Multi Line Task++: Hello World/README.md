@@ -58,7 +58,7 @@ So we get type === ```function``` and an [output] for ```f()``` === ```"Hello, w
 
 ### Every line must have at most ```2``` characters
 
-Now, for the easy part. First: ```f=""['trim'].bind("Hello, world!")``` === ```f=""['trim']['bind']`Hello, world!\` ```.
+Now, for the easy part. First: ```f=""['trim'].bind("Hello, world!")``` === ```f=""['trim']['bind']`Hello, world!` ```.
 
 Next, we make use of ```\``` to meet the every line must have at most ```2``` characters requirement.
 
@@ -95,4 +95,4 @@ d\
 !`
 ```
 
-And there you have it, 30 lines, I missed the 28 lines first pass, it has to do with how you can combine the ```][``` and so on into one 2 character line. 
+And there you have it, 30 lines, I missed the 28 lines first pass, it has to do with how you can combine the ```][``` and so on into one 2 character line.
