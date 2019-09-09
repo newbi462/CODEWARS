@@ -25,7 +25,8 @@ d\
 ['trim'] // forces typeof === funtion, but f(); wont run String.prototype.trim called on null or undefined
 //?? is there a .proto that will force this operation to a new funtion it will run?
 // The bind() method creates a new function, function.bind(thisArg, so will "typeof funtion" let this new funtion run?
-.bind("Hello, world!") // perserves typeof === funtion under the new funtion and forces the ['trim'] funtion to run. 
+//.bind("Hello, world!") // perserves typeof === funtion under the new funtion and forces the ['trim'] funtion to run.
+['bind']`Hello, world!` // change sytnatx to make \ compatible
 
 //re asemple string
 /*no need for this as it is as needed*/
