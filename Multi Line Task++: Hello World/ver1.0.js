@@ -7,7 +7,16 @@ f = function() {
 
 f=()=>"Hello, world!"
 
+f=
+(
+
+)=>//3 not 2
+"Hello, world!"
 
 // f === string "Hello, world!"
-//break aopart string in to 2 charater or less segments
+f=()=>"Hello, world!"
+
+//break apart string in to 2 charater or less segments
+
+
 //re asemple string
