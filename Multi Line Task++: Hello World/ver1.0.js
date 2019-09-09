@@ -5,16 +5,14 @@ f=
 t\
 r\
 i\
-m\
-']
-[
+m'
+][
 '\
 b\
 i\
 n\
-d\
-']
-`\
+d'
+]`
 H\
 e\
 l\
@@ -28,5 +26,3 @@ r\
 l\
 d\
 !`
-
-// acording to the kata, It's possible to complete this in ```28``` lines only., so sould lok for a way to make this 2 line shorter.
