@@ -1,27 +1,32 @@
-// can ['trim'] be tereated like a string?
+// Do I have all the letters in my keys?
 $=
-""
-['t'+'r'+'i'+'m']// ['trim'] == ['t'+'r'+'i'+'m'] :)
+`` // invert "" and `` so this is all strng subsitution
 [
-'\
-b\
-i\
-n\
-d'
-]`
-H\
-e\
-l\
-l\
-o\
-,\
- \
-w\
-o\
-r\
-l\
-d\
-!`
+  't'+
+  'r'+
+  'i'+
+  'm']// ['trim'] == ['t'+'r'+'i'+'m'] :)
+[
+  'b'+
+  'i'+
+  'n'+
+  'd'
+]
+(
+  'H'+
+  'e'+
+  'l'+
+  'l'+
+  'o'+
+  ','+
+  ' '+
+  'w'+
+  'o'+
+  'r'+
+  'l'+
+  'd'+
+  '!'
+)
 
 
 
