@@ -1,3 +1,33 @@
+// can ['trim'] be tereated like a string?
+$=
+""
+['t'+'r'+'i'+'m']// ['trim'] == ['t'+'r'+'i'+'m'] :)
+[
+'\
+b\
+i\
+n\
+d'
+]`
+H\
+e\
+l\
+l\
+o\
+,\
+ \
+w\
+o\
+r\
+l\
+d\
+!`
+
+
+
+
+
+
 $=
 (
 )=>// will count as 3 charaters :(
