@@ -1,6 +1,8 @@
 // Do I have all the letters in my keys?
-$=
-`` // invert "" and `` so this is all strng subsitution
+$
+=
+`
+` // invert "" and `` so this is all strng subsitution, `` also meets 1 char
 [
   't'+// ([] + {})[6]
   'r'+// (!![] + [])[1]
