@@ -8,4 +8,4 @@ function removeNb (n) {
     if (a < n && a % 1 === 0) {answer.push([a,i]);}
   }
   return answer;
-} // b is not neaded
+}
