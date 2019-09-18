@@ -1,7 +1,7 @@
 var justify = function(str, len) {
   var wordon = [];
   var lenline = [];
-  var awnser = [];
+  var answer = [];
   var count = 0;
   var nextword = [];
   var spaces = 0;
@@ -45,14 +45,14 @@ var justify = function(str, len) {
 
       if (extraspace === 0) {
         for (let x = 0; x < holdlinewords.length-1; x++) {
-          awnser.push(holdlinewords[x]);
+          answer.push(holdlinewords[x]);
           for (let a = 0; a < eqspace; a++) {
-            awnser.push(" ");
+            answer.push(" ");
           }
         }
-        awnser.push(holdlinewords[holdlinewords.length-1]);
+        answer.push(holdlinewords[holdlinewords.length-1]);
 // is this the last line?
-        if (i+1 < arrayofstr.length) {awnser.push('\n');}
+        if (i+1 < arrayofstr.length) {answer.push('\n');}
         lenline = [];
         holdlinewords = [];
         spaces = 0;
@@ -60,17 +60,17 @@ var justify = function(str, len) {
       }
       else if (extraspace > 0) {
         for (let x = 0; x < holdlinewords.length-1; x++) {
-          awnser.push(holdlinewords[x]);
+          answer.push(holdlinewords[x]);
           if (extraspace > kill) {
-            awnser.push(" ");
+            answer.push(" ");
             kill = kill + 1;
           }
           for (let a = 0; a < (eqspace-(eqspace % 1)); a++) {
-            awnser.push(" ");
+            answer.push(" ");
           }
         }
-        awnser.push(holdlinewords[holdlinewords.length-1]);
-        if (i+1 < arrayofstr.length) {awnser.push('\n');}
+        answer.push(holdlinewords[holdlinewords.length-1]);
+        if (i+1 < arrayofstr.length) {answer.push('\n');}
         lenline = [];
         holdlinewords = [];
         spaces = 0;
@@ -78,8 +78,8 @@ var justify = function(str, len) {
         lastline = null;
       }
       else {
-        awnser.push(holdlinewords);
-        if (i+1 < arrayofstr.length) {awnser.push('\n');}
+        answer.push(holdlinewords);
+        if (i+1 < arrayofstr.length) {answer.push('\n');}
         lenline = [];
         holdlinewords = [];
         spaces = 0;
@@ -96,9 +96,9 @@ var justify = function(str, len) {
 // is there still uncleared words?
   if (lastline !== null) {
     for (let i = 0; i < lastline.length-1; i++) {
-      awnser.push(lastline[i]);
+      answer.push(lastline[i]);
     }
   }
 
-  return awnser.join("");
+  return answer.join("");
 };
