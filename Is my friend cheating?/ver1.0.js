@@ -7,12 +7,12 @@ function removeNb (n) {
   var sumof = 0;
   var arrayofa = [];
   var arrayofb = [];
-  var awnser = [];
-  var sumall = 0;
+  var answer = [];
+  var sumall = (n*(n+1))/2;
 
   for (let i = 0; i < n; i++) {
     arrayof1ton.push(copyn);
-    sumall = sumall + copyn;
+    //sumall = sumall + copyn; //= (n*(n+1))/2
     copyn = copyn - 1;
   }
 
@@ -31,11 +31,18 @@ function removeNb (n) {
     }
   }
 
-  awnser.push(arrayofa.reverse());
-  awnser.push(arrayofb.reverse());
-  if (arrayofa.length > 0) {return awnser;}
+  answer.push(arrayofa.reverse());
+  answer.push(arrayofb.reverse());
+  if (arrayofa.length > 0) {return answer;}
   else {
-    awnser = [];
-    return awnser;
+    answer = [];
+    return answer;
   }
 }
+
+// algebra to replace most loops with math that finds the other var
+/*(a * b) = sum - a - b
+  (a * b) + a = sum - b
+  (a * b) + (a * 1) = sum - b
+  a(b + 1) = sum - b
+  a = (sum - b)/(b + 1)*/
