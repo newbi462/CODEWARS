@@ -1,10 +1,6 @@
 function multiply(a, b) {
   var asplit = a.split("").reverse();
   var bsplit = b.split("").reverse();
-  /* reverse to use array index count for place values
-  [0] = no extra seros or 1
-  [1] = 1 extra seros or 10
-  and so on, where [1] === 3 [0] === 9, so 3 * 9 = 27 + "0", or 270 === 30*9 */
   var placevaluezeros = [];
   var loopanswer;
   var hold = 0;
@@ -20,9 +16,8 @@ function multiply(a, b) {
     }
   }
 
-/*USE PLACE VALUE treat 27,0 like 2,7,0 where 10 10s is 100s*/
   for (var i = 0; i < placevaluezeros.length; i++) {
-    hold = placevaluezeros[i] % 10;//the remander is the corect value for this place value
+    hold = placevaluezeros[i] % 10;
     tonextplace = (placevaluezeros[i]-(hold)) / 10;
     answer.push(hold);
     if (placevaluezeros[i+1] >= 0) {
@@ -31,7 +26,6 @@ function multiply(a, b) {
     } else { answer.push(tonextplace); }
   }
 
-// test for leading zeros
-  var answersplit = answer.reverse();//.reverse() to put 1s place at end instead of front
+  var answersplit = answer.reverse();
   while (answersplit[0] === 0 && answersplit.length > 1) { answersplit.splice(0, 1); }
 return answersplit.join("");  }
