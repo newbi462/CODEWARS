@@ -4,48 +4,47 @@ function multiply(a, b) {
   var bsplit = b.split("");
   bsplit.reverse();
   /* reverse to use array index count for place values
-  [0] = no extra seros or 1
-  [1] = 1 extra seros or 10
+  [0] = no extra zeros or 1
+  [1] = 1 extra zeros or 10
   and so on, where [1] === 3 [0] === 9, so 3 * 9 = 27 + "0", or 270 === 30*9 */
   var placevaluezeros = [];
-  var loopawnser;
-  var awnser = "0";
+  var loopanswer;
+  var answer = "0";
   var hold;
 
   for (let i = 0; i < asplit.length; i++) {
     for (let x = 0; x < bsplit.length; x++) {
       // strings to number
       //asplit[i] * bsplit[x]
-      loopawnser = parseInt( asplit[i], 0 ) * parseInt( bsplit[x], 0 )
+      loopanswer = parseInt( asplit[i], 0 ) * parseInt( bsplit[x], 0 )
       // to string
-      loopawnser.toString()
-      ////console.log("loop:" + loopawnser);
-      placevaluezeros.push(loopawnser);
+      loopanswer.toString()
+      ////console.log("loop:" + loopanswer);
+      placevaluezeros.push(loopanswer);
       ////console.log(i+x);
       // add place value zeros to string
       for (let y = 0; y < i+x; y++) {
         placevaluezeros.push("0");
       }
-      // set loopawnser = tpo this value as a "b" for add()
-      loopawnser = placevaluezeros.join("")
-      ////console.log("loop:" + loopawnser);
+      // set loopanswer = tpo this value as a "b" for add()
+      loopanswer = placevaluezeros.join("")
+      ////console.log("loop:" + loopanswer);
       placevaluezeros = [];
-      // use add() to add "loopawnser" and "awnser"
-      awnser = add(awnser, loopawnser);
-      //console.log(awnser);
+      // use add() to add "loopanswer" and "answer"
+      answer = add(answer, loopanswer);
+      //console.log(answer);
     }
   }
   // test for leading zeros
-  var awnsersplit = awnser.split("");
-  while (awnsersplit[0] === "0" && awnsersplit.length > 1) {
-    awnsersplit.splice(0, 1);
+  var answersplit = answer.split("");
+  while (answersplit[0] === "0" && answersplit.length > 1) {
+    answersplit.splice(0, 1);
   }
-  awnser = awnsersplit.join("")
+  answer = answersplit.join("")
 
 
-  return awnser;
+  return answer;
 }
-
 
 
 //ADD LONG NUMBERS OF STRINGS
@@ -54,7 +53,7 @@ function add(a, b) {
   var bsplit = b.split("");
   var sum = 0;
   var carry = 0;
-  var awnser = [];
+  var answer = [];
   var hold;
 
 //the logic of carry the one place value addition
@@ -65,12 +64,12 @@ function add(a, b) {
         carry = 0;
       }
       if (sum - 10 < 0) {
-        awnser.push(sum.toString());
+        answer.push(sum.toString());
       }
       if (sum - 10 >= 0) {
         carry = 1;
         sum = sum - 10;
-        awnser.push(sum.toString());
+        answer.push(sum.toString());
       }
     }
   }
@@ -83,12 +82,12 @@ function add(a, b) {
           carry = 0;
         }
         if (sum - 10 < 0) {
-          awnser.push(sum.toString());
+          answer.push(sum.toString());
         }
         if (sum - 10 >= 0) {
           carry = 1;
           sum = sum - 10;
-          awnser.push(sum.toString());
+          answer.push(sum.toString());
         }
       }
       if (i < bsplit.length-asplit.length) {
@@ -97,12 +96,12 @@ function add(a, b) {
           carry = 0;
         }
         if (sum - 10 < 0) {
-          awnser.push(sum.toString());
+          answer.push(sum.toString());
         }
         if (sum - 10 >= 0) {
           carry = 1;
           sum = sum - 10;
-          awnser.push(sum.toString());
+          answer.push(sum.toString());
         }
       }
     }
@@ -116,12 +115,12 @@ function add(a, b) {
           carry = 0;
         }
         if (sum - 10 < 0) {
-          awnser.push(sum.toString());
+          answer.push(sum.toString());
         }
         if (sum - 10 >= 0) {
           carry = 1;
           sum = sum - 10;
-          awnser.push(sum.toString());
+          answer.push(sum.toString());
         }
       }
       if (i < asplit.length-bsplit.length) {
@@ -130,21 +129,21 @@ function add(a, b) {
           carry = 0;
         }
         if (sum - 10 < 0) {
-          awnser.push(sum.toString());
+          answer.push(sum.toString());
         }
         if (sum - 10 >= 0) {
           carry = 1;
           sum = sum - 10;
-          awnser.push(sum.toString());
+          answer.push(sum.toString());
         }
       }
     }
   }
 
 // carry the one if left over for a value larger than the loop
-  if (carry > 0) {awnser.push(carry.toString());}
+  if (carry > 0) {answer.push(carry.toString());}
 
-  awnser.reverse();
-  hold = awnser.join("");
+  answer.reverse();
+  hold = answer.join("");
   return hold;
 }
