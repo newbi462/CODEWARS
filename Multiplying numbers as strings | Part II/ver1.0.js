@@ -1,5 +1,12 @@
-function multiply(n, o){
-  var answer = multiplyp1(n, o);
+function multiply(n, o){;
+  var answer;
+  // teach to skip for "0"
+  if (parseInt( n, 0 ) === 0 || parseInt( o, 0 ) === 0) {
+    answer = "0";
+  }
+  else {
+    answer = multiplyp1(n, o);
+  }
   return answer;
 }
 
