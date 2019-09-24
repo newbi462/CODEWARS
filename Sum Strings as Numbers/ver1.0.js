@@ -1,7 +1,7 @@
 function sumStrings(a,b) {
   var answer = add(a, b);
   var answersplit = answer.split("");
-  while (answersplit[0] === 0 && answersplit.length > 1) { answersplit.splice(0, 1); }
+  while (answersplit[0] === "0" && answersplit.length > 1) { answersplit.splice(0, 1); }
   return answersplit.join("");
 }
 
