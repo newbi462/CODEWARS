@@ -30,7 +30,7 @@ function multiply(n, o){;
   }
 
   // put decimals back
-  if (dec > 0) {
+  if (dec > 0 && answer != "0") {
     answersplit = answer.split("");
     answersplit.splice(answersplit.length - dec, 0, ".");
     answer = answersplit.join("")
