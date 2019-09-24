@@ -1,5 +1,6 @@
 function multiply(n, o){;
   var answer;
+  var answersplit = [];
 
   // teach top count decimals
   var dec = 0;
@@ -29,6 +30,12 @@ function multiply(n, o){;
   }
 
   // put decimals back
+  if (dec > 0) {
+    answersplit = answer.split("");
+    answersplit.splice(answersplit.length - dec, 0, ".");
+    answer = answersplit.join("")
+    answersplit = []
+  }
 
   return answer;
 }
