@@ -1,8 +1,11 @@
 function multiply(n, o){;
+  console.log(n);
+  console.log(o);
   var answer;
   var answersplit = [];
+  var hold = [];
 
-  // teach top count decimals
+  // teach to count decimals, and fix "-"
   var dec = 0;
   var nsplit = n.split("");
   for (let i = 0; i < nsplit.length; i++) {
@@ -11,6 +14,10 @@ function multiply(n, o){;
       nsplit.splice(i, 1);
       n = nsplit.join("");
     }
+    if (nsplit[i] === "-") {
+      hold.push(nsplit[i]);
+      nsplit.splice(i, 1);
+    }
   }
   var osplit = o.split("");
   for (let i = 0; i < osplit.length; i++) {
@@ -18,6 +25,10 @@ function multiply(n, o){;
       dec = dec + osplit.length - i - 1;
       osplit.splice(i, 1);
       o = osplit.join("");
+    }
+    if (osplit[i] === "-") {
+      hold.push(osplit[i]);
+      osplit.splice(i, 1);
     }
   }
 
@@ -34,7 +45,6 @@ function multiply(n, o){;
     answersplit = answer.split("");
     answersplit.splice(answersplit.length - dec, 0, ".");
     answer = answersplit.join("")
-    answersplit = []
   }
 
   // trailing zeros
@@ -43,6 +53,17 @@ function multiply(n, o){;
       answer = answersplit.join("")
   }
 
+  //fix ends in "."
+  if (answersplit[answersplit.length-1] === ".") {
+    answersplit.splice(answersplit.length-1, 1);
+    answer = answersplit.join("")
+  }
+
+  // put "-" back
+  if (hold[0] === "-" && hold.length === 1 && answer != "0") {
+    answersplit.splice(0, 0, hold[0]);
+    answer = answersplit.join("")
+  }
 
   return answer;
 }
