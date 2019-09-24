@@ -12,11 +12,14 @@ function multiply(n, o){;
     if (nsplit[i] === ".") {
       dec = dec + nsplit.length - i - 1;
       nsplit.splice(i, 1);
+      i = i-1;
       n = nsplit.join("");
     }
     if (nsplit[i] === "-") {
       hold.push(nsplit[i]);
       nsplit.splice(i, 1);
+      i = i-1;
+      n = nsplit.join("");
     }
   }
   var osplit = o.split("");
@@ -24,11 +27,14 @@ function multiply(n, o){;
     if (osplit[i] === ".") {
       dec = dec + osplit.length - i - 1;
       osplit.splice(i, 1);
+      i = i-1;
       o = osplit.join("");
     }
     if (osplit[i] === "-") {
       hold.push(osplit[i]);
       osplit.splice(i, 1);
+      i = i-1;
+      o = osplit.join("");
     }
   }
 
@@ -40,15 +46,15 @@ function multiply(n, o){;
     answer = multiplyp1(n, o);
   }
 
+  answersplit = answer.split("");
   // put decimals back
   if (dec > 0 && answer != "0") {
-    answersplit = answer.split("");
     answersplit.splice(answersplit.length - dec, 0, ".");
     answer = answersplit.join("")
   }
 
   // trailing zeros
-  while (answersplit[answersplit.length-1] === "0") {
+  while (answersplit[answersplit.length-1] === "0" && dec > 0 && answer != "0") {
       answersplit.splice(answersplit.length-1, 1);
       answer = answersplit.join("")
   }
@@ -59,11 +65,19 @@ function multiply(n, o){;
     answer = answersplit.join("")
   }
 
+  // move leading 0 until after decimals back in
+  while (answersplit[0] === "0" && answersplit.length > 1 && answersplit[1] != "." ) {
+    answersplit.splice(0, 1);
+    answer = answersplit.join("")
+  }
+
   // put "-" back
   if (hold[0] === "-" && hold.length === 1 && answer != "0") {
     answersplit.splice(0, 0, hold[0]);
     answer = answersplit.join("")
   }
+
+
 
   return answer;
 }
@@ -97,5 +111,5 @@ function multiplyp1(a, b) {
   }
 
   var answersplit = answer.reverse();
-  while (answersplit[0] === 0 && answersplit.length > 1) { answersplit.splice(0, 1); }
+  //while (answersplit[0] === 0 && answersplit.length > 1) { answersplit.splice(0, 1); }
 return answersplit.join("");  }
