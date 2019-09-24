@@ -1,5 +1,25 @@
 function multiply(n, o){;
   var answer;
+
+  // teach top count decimals
+  var dec = 0;
+  var nsplit = n.split("");
+  for (let i = 0; i < nsplit.length; i++) {
+    if (nsplit[i] === ".") {
+      dec = dec + nsplit.length - i - 1;
+      nsplit.splice(i, 1);
+      n = nsplit.join("");
+    }
+  }
+  var osplit = o.split("");
+  for (let i = 0; i < osplit.length; i++) {
+    if (osplit[i] === ".") {
+      dec = dec + osplit.length - i - 1;
+      osplit.splice(i, 1);
+      o = osplit.join("");
+    }
+  }
+
   // teach to skip for "0"
   if (parseInt( n, 0 ) === 0 || parseInt( o, 0 ) === 0) {
     answer = "0";
@@ -7,6 +27,9 @@ function multiply(n, o){;
   else {
     answer = multiplyp1(n, o);
   }
+
+  // put decimals back
+
   return answer;
 }
 
