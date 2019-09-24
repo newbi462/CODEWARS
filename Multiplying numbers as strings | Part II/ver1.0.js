@@ -37,6 +37,13 @@ function multiply(n, o){;
     answersplit = []
   }
 
+  // trailing zeros
+  while (answersplit[answersplit.length-1] === "0") {
+      answersplit.splice(answersplit.length-1, 1);
+      answer = answersplit.join("")
+  }
+
+
   return answer;
 }
 
