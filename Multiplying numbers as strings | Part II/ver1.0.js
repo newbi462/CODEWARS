@@ -1,6 +1,4 @@
 function multiply(n, o){;
-  console.log(n);
-  console.log(o);
   var answer;
   var answersplit = [];
   var hold = [];
@@ -48,39 +46,16 @@ function multiply(n, o){;
 
   answersplit = answer.split("");
   // put decimals back
-  if (dec > 0 && answer != "0") {
-    answersplit.splice(answersplit.length - dec, 0, ".");
-    answer = answersplit.join("")
-  }
-
+  if (dec > 0 && answer != "0") { answersplit.splice(answersplit.length - dec, 0, "."); }
   // trailing zeros
-  while (answersplit[answersplit.length-1] === "0" && dec > 0 && answer != "0") {
-      answersplit.splice(answersplit.length-1, 1);
-      answer = answersplit.join("")
-  }
-
+  while (answersplit[answersplit.length-1] === "0" && dec > 0 && answer != "0") { answersplit.splice(answersplit.length-1, 1); }
   //fix ends in "."
-  if (answersplit[answersplit.length-1] === ".") {
-    answersplit.splice(answersplit.length-1, 1);
-    answer = answersplit.join("")
-  }
-
+  if (answersplit[answersplit.length-1] === ".") { answersplit.splice(answersplit.length-1, 1); }
   // move leading 0 until after decimals back in
-  while (answersplit[0] === "0" && answersplit.length > 1 && answersplit[1] != "." ) {
-    answersplit.splice(0, 1);
-    answer = answersplit.join("")
-  }
-
+  while (answersplit[0] === "0" && answersplit.length > 1 && answersplit[1] != "." ) { answersplit.splice(0, 1); answer = answersplit.join("") }
   // put "-" back
-  if (hold[0] === "-" && hold.length === 1 && answer != "0") {
-    answersplit.splice(0, 0, hold[0]);
-    answer = answersplit.join("")
-  }
-
-
-
-  return answer;
-}
+  if (hold[0] === "-" && hold.length === 1 && answer != "0") { answersplit.splice(0, 0, hold[0]); }
+return answersplit.join("");}
 
 function multiplyp1(a, b) {
   var asplit = a.split("").reverse();
