@@ -37,12 +37,8 @@ function multiply(n, o){;
   }
 
   // teach to skip for "0"
-  if (parseInt( n, 0 ) === 0 || parseInt( o, 0 ) === 0) {
-    answer = "0";
-  }
-  else {
-    answer = multiplyp1(n, o);
-  }
+  if (parseInt( n, 0 ) === 0 || parseInt( o, 0 ) === 0) { answer = "0"; }
+  else { answer = multiplyp1(n, o); }
 
   answersplit = answer.split("");
   // put decimals back
